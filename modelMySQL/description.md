@@ -1,13 +1,17 @@
 tbl_locality - теритариальное место расположения /Нежин, Носовка...../
+
 tbl_type_locality - обобщение места расположения /перегон, станция, административные здания...../
 
 tbl_facility - объект инфраструктуры /релейная, АТС, НУП, мастерская...../
+
 tbl_hazard_category - Категория помещения(объект инфраструктуры) /осбоопасное.../
 
 tbl_dilnicya - участок обслуживания /участок СЦБ №1 ШЧУ-Юрченко, участок связь №3 ШЧУ-Дзюбан...../
+
 tbl_brigada - брига обслюживающая устройства /бригада №1 ШНС-Наталушко (входит в участок №1)..../
 
 tbl_type_object - 
+
 tbl_object - 
 
 tdl_measuring_instrument - ЗВТ
@@ -15,7 +19,7 @@ tdl_measuring_instrument - ЗВТ
 
 
 
-object
+tbl_object
 type_object -
 inventory_number - Инвентарный номер
 inspection_date - Дата проверки
@@ -61,8 +65,8 @@ protocol_number - Номер протокола испытаний
 
 
 
-
-measuring_instrument - ТипЗВТ
+tbl_type_measuring_instrument
+type_measuring_instrument - ТипЗВТ
 serial_number - ЗаводськийНомерЗВТ
 inventory_number - ІнвентарнийНомерЗВТ
 calibration_date - ДатаПовірки
@@ -71,9 +75,11 @@ calibration_interval - МіжПовірочнийІнтервал
 next_calibration - Дата Наступної Повірки
 notices - Примітки
 
-ДозвілСвідотствоВЕТЛ
-КимВиданийДозвілСвідотство
-НазваДозвілСвідотство
-НомерДозвілСвідотство
-ДатаВидачіДозвілСвідотство
-ДійснийДоДозвілСвідотство
+
+
+tbl_certificate - ДозвілСвідотствоВЕТЛ
+issued - КимВиданийДозвілСвідотство
+name_certificate - НазваДозвілСвідотство
+number_certificate - НомерДозвілСвідотство
+date_issue_certificate - ДозвілСвідотство
+valid_to_certificate - ДійснийДоДозвілСвідотство
