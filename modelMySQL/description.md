@@ -1,10 +1,3 @@
-DIRECTORY STRUCTURE
--------------------
-
-      tbl_locality             contains assets definition
-      commands/           contains console commands (controllers)
-
-
 tbl_locality - теритариальное место расположения /Нежин, Носовка...../
 tbl_type_locality - обобщение места расположения /перегон, станция, административные здания...../
 
