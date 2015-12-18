@@ -1,0 +1,386 @@
+2015-12-15 16:04:25 [::1][-][-][error][yii\base\InvalidParamException] exception 'yii\base\InvalidParamException' with message 'The file or directory to be published does not exist: /var/www/html/vetl/vendor/bower/jquery/dist' in /var/www/html/vetl/vendor/yiisoft/yii2/web/AssetManager.php:452
+Stack trace:
+#0 /var/www/html/vetl/vendor/yiisoft/yii2/web/AssetBundle.php(163): yii\web\AssetManager->publish('/var/www/html/v...', Array)
+#1 /var/www/html/vetl/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 /var/www/html/vetl/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 /var/www/html/vetl/vendor/yiisoft/yii2/web/View.php(284): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 /var/www/html/vetl/vendor/yiisoft/yii2/web/View.php(289): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...', NULL)
+#5 /var/www/html/vetl/vendor/yiisoft/yii2/web/View.php(289): yii\web\View->registerAssetBundle('yii\\web\\YiiAsse...', NULL)
+#6 /var/www/html/vetl/vendor/yiisoft/yii2/web/AssetBundle.php(119): yii\web\View->registerAssetBundle('app\\assets\\AppA...')
+#7 /var/www/html/vetl/views/layouts/main.php(12): yii\web\AssetBundle::register(Object(yii\web\View))
+#8 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/v...')
+#9 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/v...', Array)
+#10 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/v...', Array, Object(app\controllers\SiteController))
+#11 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<div class="sit...')
+#12 /var/www/html/vetl/controllers/SiteController.php(52): yii\base\Controller->render('index')
+#13 [internal function]: app\controllers\SiteController->actionIndex()
+#14 /var/www/html/vetl/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#15 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#16 /var/www/html/vetl/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#17 /var/www/html/vetl/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#18 /var/www/html/vetl/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /var/www/html/vetl/web/index.php(12): yii\base\Application->run()
+#20 {main}
+2015-12-15 16:04:25 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '6d001a350821210e23fccf98cb319ce13a66397857738eaba53664d4a6742fc1a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"v35EfBRq7gLVbQQdkeooTBUmBmfG9GNn\";}'
+    'PHPSESSID' => '9l2tt5k40gh0a3hbnf1ufidd20'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/vetl/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4,uk;q=0.2'
+    'HTTP_COOKIE' => '_csrf=6d001a350821210e23fccf98cb319ce13a66397857738eaba53664d4a6742fc1a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22v35EfBRq7gLVbQQdkeooTBUmBmfG9GNn%22%3B%7D; PHPSESSID=9l2tt5k40gh0a3hbnf1ufidd20'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/vetl/web/index.php'
+    'REMOTE_PORT' => '48604'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vetl/web/index.php'
+    'SCRIPT_NAME' => '/vetl/web/index.php'
+    'PHP_SELF' => '/vetl/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450195465.578
+    'REQUEST_TIME' => 1450195465
+]
+2015-12-15 20:15:38 [::1][-][surlrirugh9rtiik1bpfua2g35][error][yii\base\UnknownPropertyException] exception 'yii\base\UnknownPropertyException' with message 'Getting unknown property: app\models\LoginForm::1rememberMe' in /var/www/html/vetl/vendor/yiisoft/yii2/base/Component.php:143
+Stack trace:
+#0 /var/www/html/vetl/vendor/yiisoft/yii2/helpers/BaseHtml.php(2029): yii\base\Component->__get('1rememberMe')
+#1 /var/www/html/vetl/vendor/yiisoft/yii2/helpers/BaseHtml.php(1431): yii\helpers\BaseHtml::getAttributeValue(Object(app\models\LoginForm), '1rememberMe')
+#2 /var/www/html/vetl/vendor/yiisoft/yii2/widgets/ActiveField.php(535): yii\helpers\BaseHtml::activeCheckbox(Object(app\models\LoginForm), '1rememberMe', Array)
+#3 /var/www/html/vetl/vendor/yiisoft/yii2-bootstrap/ActiveField.php(212): yii\widgets\ActiveField->checkbox(Array, false)
+#4 /var/www/html/vetl/views/site/login.php(33): yii\bootstrap\ActiveField->checkbox(Array)
+#5 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/v...')
+#6 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/v...', Array)
+#7 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(149): yii\base\View->renderFile('/var/www/html/v...', Array, Object(app\controllers\SiteController))
+#8 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(371): yii\base\View->render('login', Array, Object(app\controllers\SiteController))
+#9 /var/www/html/vetl/controllers/SiteController.php(67): yii\base\Controller->render('login', Array)
+#10 [internal function]: app\controllers\SiteController->actionLogin()
+#11 /var/www/html/vetl/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#12 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#13 /var/www/html/vetl/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('login', Array)
+#14 /var/www/html/vetl/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/login', Array)
+#15 /var/www/html/vetl/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/vetl/web/index.php(12): yii\base\Application->run()
+#17 {main}
+2015-12-15 20:15:38 [::1][-][surlrirugh9rtiik1bpfua2g35][info][application] $_GET = [
+    'r' => 'site/login'
+]
+
+$_COOKIE = [
+    '_csrf' => '796ca778ab0f5f55ece32e3e5ca7735c6238640d6ec97a88722c0b5c0cc9ea53a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"DMtHd5frFXswysNsKbdFIiAFg4CG__cG\";}'
+    'PHPSESSID' => 'surlrirugh9rtiik1bpfua2g35'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/vetl/web/index.php?r=site%2Flogin'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4,uk;q=0.2'
+    'HTTP_COOKIE' => '_csrf=796ca778ab0f5f55ece32e3e5ca7735c6238640d6ec97a88722c0b5c0cc9ea53a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22DMtHd5frFXswysNsKbdFIiAFg4CG__cG%22%3B%7D; PHPSESSID=surlrirugh9rtiik1bpfua2g35'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/vetl/web/index.php'
+    'REMOTE_PORT' => '51704'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogin'
+    'REQUEST_URI' => '/vetl/web/index.php?r=site%2Flogin'
+    'SCRIPT_NAME' => '/vetl/web/index.php'
+    'PHP_SELF' => '/vetl/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450210538.627
+    'REQUEST_TIME' => 1450210538
+]
+2015-12-17 19:58:05 [::1][100][al026e8eqboj4ctrfmp8ufopc3][error][yii\web\HttpException:405] exception 'yii\web\MethodNotAllowedHttpException' with message 'Method Not Allowed. This url can only handle the following request methods: POST.' in /var/www/html/vetl/vendor/yiisoft/yii2/filters/VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 /var/www/html/vetl/vendor/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 /var/www/html/vetl/vendor/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/vetl/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('logout', Array)
+#6 /var/www/html/vetl/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/logout', Array)
+#7 /var/www/html/vetl/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/vetl/web/index.php(12): yii\base\Application->run()
+#9 {main}
+2015-12-17 19:58:05 [::1][100][al026e8eqboj4ctrfmp8ufopc3][info][application] $_GET = [
+    'r' => 'site/logout'
+]
+
+$_COOKIE = [
+    '_csrf' => '3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4\";}'
+    'PHPSESSID' => 'al026e8eqboj4ctrfmp8ufopc3'
+    '_identity' => '7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/vetl/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4,uk;q=0.2'
+    'HTTP_COOKIE' => '_csrf=3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4%22%3B%7D; PHPSESSID=al026e8eqboj4ctrfmp8ufopc3; _identity=7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/vetl/web/index.php'
+    'REMOTE_PORT' => '45676'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogout'
+    'REQUEST_URI' => '/vetl/web/index.php?r=site%2Flogout'
+    'SCRIPT_NAME' => '/vetl/web/index.php'
+    'PHP_SELF' => '/vetl/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450382285.779
+    'REQUEST_TIME' => 1450382285
+]
+2015-12-17 19:58:18 [::1][100][al026e8eqboj4ctrfmp8ufopc3][error][yii\web\HttpException:405] exception 'yii\web\MethodNotAllowedHttpException' with message 'Method Not Allowed. This url can only handle the following request methods: POST.' in /var/www/html/vetl/vendor/yiisoft/yii2/filters/VerbFilter.php:105
+Stack trace:
+#0 [internal function]: yii\filters\VerbFilter->beforeAction(Object(yii\base\ActionEvent))
+#1 /var/www/html/vetl/vendor/yiisoft/yii2/base/Component.php(541): call_user_func(Array, Object(yii\base\ActionEvent))
+#2 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(263): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#3 /var/www/html/vetl/vendor/yiisoft/yii2/web/Controller.php(108): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#4 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(149): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#5 /var/www/html/vetl/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('logout', Array)
+#6 /var/www/html/vetl/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('site/logout', Array)
+#7 /var/www/html/vetl/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#8 /var/www/html/vetl/web/index.php(12): yii\base\Application->run()
+#9 {main}
+2015-12-17 19:58:18 [::1][100][al026e8eqboj4ctrfmp8ufopc3][info][application] $_GET = [
+    'r' => 'site/logout'
+]
+
+$_COOKIE = [
+    '_csrf' => '3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4\";}'
+    'PHPSESSID' => 'al026e8eqboj4ctrfmp8ufopc3'
+    '_identity' => '7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => '100'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36'
+    'HTTP_DNT' => '1'
+    'HTTP_REFERER' => 'http://localhost/vetl/web/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4,uk;q=0.2'
+    'HTTP_COOKIE' => '_csrf=3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4%22%3B%7D; PHPSESSID=al026e8eqboj4ctrfmp8ufopc3; _identity=7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/vetl/web/index.php'
+    'REMOTE_PORT' => '45688'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'r=site%2Flogout'
+    'REQUEST_URI' => '/vetl/web/index.php?r=site%2Flogout'
+    'SCRIPT_NAME' => '/vetl/web/index.php'
+    'PHP_SELF' => '/vetl/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450382298.281
+    'REQUEST_TIME' => 1450382298
+]
+2015-12-17 19:58:55 [::1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'yii\web\Request::cookieValidationKey must be configured with a secret key.' in /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php:1219
+Stack trace:
+#0 /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php(1201): yii\web\Request->loadCookies()
+#1 /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php(1287): yii\web\Request->getCookies()
+#2 /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php(1266): yii\web\Request->loadCsrfToken()
+#3 /var/www/html/vetl/vendor/yiisoft/yii2/helpers/BaseHtml.php(286): yii\web\Request->getCsrfToken()
+#4 /var/www/html/vetl/views/layouts/main.php(20): yii\helpers\BaseHtml::csrfMetaTags()
+#5 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/v...')
+#6 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/v...', Array)
+#7 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/v...', Array, Object(app\controllers\SiteController))
+#8 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<!-- \n<div clas...')
+#9 /var/www/html/vetl/controllers/SiteController.php(52): yii\base\Controller->render('index')
+#10 [internal function]: app\controllers\SiteController->actionIndex()
+#11 /var/www/html/vetl/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#12 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#13 /var/www/html/vetl/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/vetl/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#15 /var/www/html/vetl/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/vetl/web/index.php(12): yii\base\Application->run()
+#17 {main}
+2015-12-17 19:58:55 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4\";}'
+    'PHPSESSID' => 'al026e8eqboj4ctrfmp8ufopc3'
+    '_identity' => '7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4,uk;q=0.2'
+    'HTTP_COOKIE' => '_csrf=3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4%22%3B%7D; PHPSESSID=al026e8eqboj4ctrfmp8ufopc3; _identity=7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/vetl/web/index.php'
+    'REMOTE_PORT' => '45704'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vetl/web/'
+    'SCRIPT_NAME' => '/vetl/web/index.php'
+    'PHP_SELF' => '/vetl/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450382335.89
+    'REQUEST_TIME' => 1450382335
+]
+2015-12-17 20:01:24 [::1][-][-][error][yii\base\InvalidConfigException] exception 'yii\base\InvalidConfigException' with message 'yii\web\Request::cookieValidationKey must be configured with a secret key.' in /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php:1219
+Stack trace:
+#0 /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php(1201): yii\web\Request->loadCookies()
+#1 /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php(1287): yii\web\Request->getCookies()
+#2 /var/www/html/vetl/vendor/yiisoft/yii2/web/Request.php(1266): yii\web\Request->loadCsrfToken()
+#3 /var/www/html/vetl/vendor/yiisoft/yii2/helpers/BaseHtml.php(286): yii\web\Request->getCsrfToken()
+#4 /var/www/html/vetl/views/layouts/main.php(20): yii\helpers\BaseHtml::csrfMetaTags()
+#5 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(325): require('/var/www/html/v...')
+#6 /var/www/html/vetl/vendor/yiisoft/yii2/base/View.php(247): yii\base\View->renderPhpFile('/var/www/html/v...', Array)
+#7 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->renderFile('/var/www/html/v...', Array, Object(app\controllers\SiteController))
+#8 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(372): yii\base\Controller->renderContent('<!-- \n<div clas...')
+#9 /var/www/html/vetl/controllers/SiteController.php(52): yii\base\Controller->render('index')
+#10 [internal function]: app\controllers\SiteController->actionIndex()
+#11 /var/www/html/vetl/vendor/yiisoft/yii2/base/InlineAction.php(55): call_user_func_array(Array, Array)
+#12 /var/www/html/vetl/vendor/yiisoft/yii2/base/Controller.php(151): yii\base\InlineAction->runWithParams(Array)
+#13 /var/www/html/vetl/vendor/yiisoft/yii2/base/Module.php(455): yii\base\Controller->runAction('', Array)
+#14 /var/www/html/vetl/vendor/yiisoft/yii2/web/Application.php(84): yii\base\Module->runAction('', Array)
+#15 /var/www/html/vetl/vendor/yiisoft/yii2/base/Application.php(375): yii\web\Application->handleRequest(Object(yii\web\Request))
+#16 /var/www/html/vetl/web/index.php(12): yii\base\Application->run()
+#17 {main}
+2015-12-17 20:01:24 [::1][-][-][info][application] $_COOKIE = [
+    '_csrf' => '3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4\";}'
+    'PHPSESSID' => 'al026e8eqboj4ctrfmp8ufopc3'
+    '_identity' => '7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba:2:{i:0;s:9:\"_identity\";i:1;s:28:\"[\"100\",\"test100key\",2592000]\";}'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'localhost'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/47.0.2526.73 Chrome/47.0.2526.73 Safari/537.36'
+    'HTTP_DNT' => '1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, sdch'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4,uk;q=0.2'
+    'HTTP_COOKIE' => '_csrf=3bcd75fd0bf53761b701cacd76aa7314b636e29b93596599553f81d14b6154d2a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22eKHpzuY58uW-o-mM8SODw8XZkeCE-hK4%22%3B%7D; PHPSESSID=al026e8eqboj4ctrfmp8ufopc3; _identity=7dd9ac39ba29996dce601deba2d9b4e64f7568350140b8539641f6dce2ee84dba%3A2%3A%7Bi%3A0%3Bs%3A9%3A%22_identity%22%3Bi%3A1%3Bs%3A28%3A%22%5B%22100%22%2C%22test100key%22%2C2592000%5D%22%3B%7D'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.12 (Ubuntu) Server at localhost Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.12 (Ubuntu)'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/var/www/html'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/var/www/html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/var/www/html/vetl/web/index.php'
+    'REMOTE_PORT' => '45712'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vetl/web/'
+    'SCRIPT_NAME' => '/vetl/web/index.php'
+    'PHP_SELF' => '/vetl/web/index.php'
+    'REQUEST_TIME_FLOAT' => 1450382484.328
+    'REQUEST_TIME' => 1450382484
+]

@@ -1,14 +1,14 @@
-*.swp
-.DS_Store
+#*.swp
+#.DS_Store
 
-.grunt
-_SpecRunner.html
-test/coverage
+#.grunt
+#_SpecRunner.html
+#test/coverage
 
-node_modules
-npm-debug.log
+#node_modules
+#npm-debug.log
 
-bower_components
+#bower_components
 
-*.iml
-.idea
+#*.iml
+#.idea
