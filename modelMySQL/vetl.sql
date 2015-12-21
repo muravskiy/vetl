@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Дек 20 2015 г., 18:54
+-- Время создания: Дек 22 2015 г., 00:59
 -- Версия сервера: 5.6.27-0ubuntu1
 -- Версия PHP: 5.6.11-1ubuntu3.1
 
@@ -19,6 +19,33 @@ SET time_zone = "+00:00";
 --
 -- База данных: `vetl`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `certificate`
+--
+
+CREATE TABLE IF NOT EXISTS `certificate` (
+  `id` int(11) NOT NULL,
+  `issued` varchar(254) NOT NULL,
+  `name_certificate` varchar(254) NOT NULL,
+  `number_certificate` varchar(45) NOT NULL,
+  `date_issue_certificate` date NOT NULL,
+  `valid_to_certificate` date NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `certificate`
+--
+
+INSERT INTO `certificate` (`id`, `issued`, `name_certificate`, `number_certificate`, `date_issue_certificate`, `valid_to_certificate`) VALUES
+(1, 'Державна служба гірничого нагляду та промислової безпеки', 'Дозвіл на випробування електричного устаткування електричних мереж', '1266.13.30', '2013-11-29', '2018-11-28'),
+(2, 'Базова організація метрології та стандартизації', 'Свідоцтво про атестацію Вимірювальної електротехнічної лабораторії', 'БОМС-9/13-2012', '2012-11-22', '2015-11-21'),
+(3, 'тест', 'тест', 'тест', '2015-12-01', '2015-12-24'),
+(4, 'тест2', 'тест2', 'тест2', '2015-12-15', '2015-12-30'),
+(5, 'тест', 'тест', 'тест', '2015-12-01', '2015-12-24'),
+(6, 'тест2', 'тест2', 'тест2', '2015-12-15', '2015-12-30');
 
 -- --------------------------------------------------------
 
@@ -39,29 +66,6 @@ CREATE TABLE IF NOT EXISTS `tbl_brigada` (
 INSERT INTO `tbl_brigada` (`id`, `room_brigade`, `last_name_SHNS`) VALUES
 (4, '4', 'Покотило'),
 (5, '5', 'Заяц');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_certificate`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_certificate` (
-  `id` int(11) NOT NULL,
-  `issued` varchar(254) NOT NULL,
-  `name_certificate` varchar(254) NOT NULL,
-  `number_certificate` varchar(45) NOT NULL,
-  `date_issue_certificate` date NOT NULL,
-  `valid_to_certificate` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_certificate`
---
-
-INSERT INTO `tbl_certificate` (`id`, `issued`, `name_certificate`, `number_certificate`, `date_issue_certificate`, `valid_to_certificate`) VALUES
-(1, 'Дозвіл Державної служби гірничого нагляду та промислової безпеки', 'випробування електричного устаткування електричних мереж', '1266.13.30', '2013-11-29', '2018-11-28'),
-(2, 'БОМС', 'Свідоцтво про атестацію ВЕТЛ', 'БОМС-9/13-2012', '2012-11-22', '2015-11-21');
 
 -- --------------------------------------------------------
 
@@ -230,15 +234,15 @@ CREATE TABLE IF NOT EXISTS `tdl_measuring_instrument` (
 --
 
 --
--- Индексы таблицы `tbl_brigada`
+-- Индексы таблицы `certificate`
 --
-ALTER TABLE `tbl_brigada`
+ALTER TABLE `certificate`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `tbl_certificate`
+-- Индексы таблицы `tbl_brigada`
 --
-ALTER TABLE `tbl_certificate`
+ALTER TABLE `tbl_brigada`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -301,15 +305,15 @@ ALTER TABLE `tdl_measuring_instrument`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `certificate`
+--
+ALTER TABLE `certificate`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+--
 -- AUTO_INCREMENT для таблицы `tbl_brigada`
 --
 ALTER TABLE `tbl_brigada`
   MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT для таблицы `tbl_certificate`
---
-ALTER TABLE `tbl_certificate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT для таблицы `tbl_facility`
 --
