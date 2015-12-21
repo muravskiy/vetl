@@ -4,6 +4,6 @@ return [
     'class' => 'yii\db\Connection',
     'dsn' => 'mysql:host=localhost;dbname=vetl',
     'username' => 'root',
-    'password' => '5733834',
+    'password' => '35fece',
     'charset' => 'utf8',
 ];
