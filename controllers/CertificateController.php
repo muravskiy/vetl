@@ -17,13 +17,13 @@ class CertificateController extends Controller
             'totalCount' => $query->count(),
         ]);
 
-        $countries = $query->orderBy('valid_to_certificate') //сортировка
+        $certificat = $query->orderBy('valid_to_certificate') //сортировка
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
 
         return $this->render('index', [
-            'countries' => $countries,
+            'certificat' => $certificat,
             'pagination' => $pagination,
         ]);
     }

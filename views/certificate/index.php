@@ -4,7 +4,7 @@ use yii\widgets\LinkPager;
 ?>
 <h1>Дозвільні документи лабораторії</h1><br>
 <ul>
-<?php foreach ($countries as $certificate): ?>
+<?php foreach ($certificat as $certificate): ?>
     <li>
         <?= Html::encode("") ?>
        					Назва - <b> <?= $certificate->name_certificate?> </b> <br>
