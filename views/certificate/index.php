@@ -4,13 +4,13 @@ use yii\widgets\LinkPager;
 ?>
 <h1>Дозволи</h1>
 <ul>
-<?php foreach ($countries as $tbl_certificate): ?>
+<?php foreach ($countries as $certificate): ?>
     <li>
-        <?= Html::encode("	Виданий - {$tbl_certificate->issued}.
-							Назва - {$tbl_certificate->name_certificate}.
-							Номер : {$tbl_certificate->number_certificate}.
-							Дата видачи : {$tbl_certificate->date_issue_certificate}.
-							Дійсний до : {$tbl_certificate->valid_to_certificate}.
+        <?= Html::encode("	Виданий - {$certificate->issued}.
+							Назва - {$certificate->name_certificate}.
+							Номер : {$certificate->number_certificate}.
+							Дата видачи : {$certificate->date_issue_certificate}.
+							Дійсний до : {$certificate->valid_to_certificate}.
 									
 							") ?>
        
