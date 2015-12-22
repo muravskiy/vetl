@@ -15,7 +15,7 @@ use yii\widgets\LinkPager;
 								<b>
 								<?php	$dt = date('Y-m-d'); ?>
 								<?php if($dt >= $certificate->valid_to_certificate): ?>
-								<span style="color: #ff6600;">Прострочений</span></b>
+								<span style="color: #ff6600;">Закінчився термін дії</span></b>
 								<?php else: ?>
 								
 								<?php endif; ?></b><br><br>
