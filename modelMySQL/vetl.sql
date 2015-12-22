@@ -1,385 +1,187 @@
--- phpMyAdmin SQL Dump
--- version 4.4.13.1deb1
--- http://www.phpmyadmin.net
---
--- Хост: localhost
--- Время создания: Дек 22 2015 г., 00:59
--- Версия сервера: 5.6.27-0ubuntu1
--- Версия PHP: 5.6.11-1ubuntu3.1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- База данных: `vetl`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `certificate`
---
-
-CREATE TABLE IF NOT EXISTS `certificate` (
-  `id` int(11) NOT NULL,
-  `issued` varchar(254) NOT NULL,
-  `name_certificate` varchar(254) NOT NULL,
-  `number_certificate` varchar(45) NOT NULL,
-  `date_issue_certificate` date NOT NULL,
-  `valid_to_certificate` date NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `certificate`
---
-
-INSERT INTO `certificate` (`id`, `issued`, `name_certificate`, `number_certificate`, `date_issue_certificate`, `valid_to_certificate`) VALUES
-(1, 'Державна служба гірничого нагляду та промислової безпеки', 'Дозвіл на випробування електричного устаткування електричних мереж', '1266.13.30', '2013-11-29', '2018-11-28'),
-(2, 'Базова організація метрології та стандартизації', 'Свідоцтво про атестацію Вимірювальної електротехнічної лабораторії', 'БОМС-9/13-2012', '2012-11-22', '2015-11-21'),
-(3, 'тест', 'тест', 'тест', '2015-12-01', '2015-12-24'),
-(4, 'тест2', 'тест2', 'тест2', '2015-12-15', '2015-12-30'),
-(5, 'тест', 'тест', 'тест', '2015-12-01', '2015-12-24'),
-(6, 'тест2', 'тест2', 'тест2', '2015-12-15', '2015-12-30');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_brigada`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_brigada` (
-  `id` int(10) unsigned NOT NULL,
-  `room_brigade` varchar(45) NOT NULL,
-  `last_name_SHNS` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_brigada`
---
-
-INSERT INTO `tbl_brigada` (`id`, `room_brigade`, `last_name_SHNS`) VALUES
-(4, '4', 'Покотило'),
-(5, '5', 'Заяц');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_facility`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_facility` (
-  `id` int(10) unsigned NOT NULL,
-  `facility` varchar(45) NOT NULL,
-  `hazard_category_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_facility`
---
-
-INSERT INTO `tbl_facility` (`id`, `facility`, `hazard_category_id`) VALUES
-(3, 'Релейне приміщення', 1),
-(4, 'Маневрова Вишка', 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_hazard_category`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_hazard_category` (
-  `id` int(10) unsigned NOT NULL,
-  `hazard_category` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_hazard_category`
---
-
-INSERT INTO `tbl_hazard_category` (`id`, `hazard_category`) VALUES
-(1, 'Небезпечні'),
-(2, 'Підвищенної небезпеки');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_locality`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_locality` (
-  `id` int(10) unsigned NOT NULL,
-  `locality` varchar(45) NOT NULL,
-  `type_locality_id` int(10) unsigned NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_locality`
---
-
-INSERT INTO `tbl_locality` (`id`, `locality`, `type_locality_id`) VALUES
-(1, 'Ніжин - Носівка', 2),
-(2, 'Носівка', 1),
-(4, 'Ніжин', 1);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_name_object`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_name_object` (
-  `id` int(10) unsigned NOT NULL,
-  `name_object` varchar(254) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_name_object`
---
-
-INSERT INTO `tbl_name_object` (`id`, `name_object`) VALUES
-(1, 'Бокорізи'),
-(2, 'Викрутка');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_object`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_object` (
-  `id` int(10) unsigned NOT NULL,
-  `type_object_id` int(10) unsigned NOT NULL,
-  `tbl_name_object_id` int(10) unsigned NOT NULL,
-  `tbl_brigada_id` int(10) unsigned NOT NULL,
-  `inventory_number` varchar(45) DEFAULT NULL,
-  `tbl_locality_id` int(10) unsigned NOT NULL,
-  `facility_id` int(10) unsigned NOT NULL,
-  `inspection_date` date NOT NULL,
-  `inspection_interval` varchar(45) NOT NULL,
-  `next_inspection` date NOT NULL,
-  `protocol_number` varchar(45) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_object`
---
-
-INSERT INTO `tbl_object` (`id`, `type_object_id`, `tbl_name_object_id`, `tbl_brigada_id`, `inventory_number`, `tbl_locality_id`, `facility_id`, `inspection_date`, `inspection_interval`, `next_inspection`, `protocol_number`) VALUES
-(1, 2, 1, 4, NULL, 4, 4, '2015-12-20', '12', '2016-12-20', NULL);
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_type_locality`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_type_locality` (
-  `id` int(10) unsigned NOT NULL,
-  `type_locality` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_type_locality`
---
-
-INSERT INTO `tbl_type_locality` (`id`, `type_locality`) VALUES
-(1, 'Станція'),
-(2, 'Перегін');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tbl_type_object`
---
-
-CREATE TABLE IF NOT EXISTS `tbl_type_object` (
-  `id` int(10) unsigned NOT NULL,
-  `type_object` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `tbl_type_object`
---
-
-INSERT INTO `tbl_type_object` (`id`, `type_object`) VALUES
-(1, 'Засіб захисту'),
-(2, 'Інструмент з ізольованими ручками');
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `tdl_measuring_instrument`
---
-
-CREATE TABLE IF NOT EXISTS `tdl_measuring_instrument` (
-  `id` int(10) unsigned NOT NULL,
-  `type_measuring_instrument` varchar(45) NOT NULL,
-  `serial_number` varchar(45) DEFAULT NULL,
-  `inventory_number` varchar(45) DEFAULT NULL,
-  `calibration_date` date NOT NULL,
-  `number_certificate` varchar(45) NOT NULL,
-  `calibration_interval` varchar(45) NOT NULL,
-  `next_calibration` date NOT NULL,
-  `notices` varchar(1024) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Индексы сохранённых таблиц
---
-
---
--- Индексы таблицы `certificate`
---
-ALTER TABLE `certificate`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tbl_brigada`
---
-ALTER TABLE `tbl_brigada`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tbl_facility`
---
-ALTER TABLE `tbl_facility`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tbl_facility_tbl_hazard_category_idx` (`hazard_category_id`);
-
---
--- Индексы таблицы `tbl_hazard_category`
---
-ALTER TABLE `tbl_hazard_category`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tbl_locality`
---
-ALTER TABLE `tbl_locality`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tbl_locality_tbl_type_locality_idx` (`type_locality_id`);
-
---
--- Индексы таблицы `tbl_name_object`
---
-ALTER TABLE `tbl_name_object`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tbl_object`
---
-ALTER TABLE `tbl_object`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_tbl_object_tbl_type_object1_idx` (`type_object_id`),
-  ADD KEY `fk_tbl_object_tbl_facility1_idx` (`facility_id`),
-  ADD KEY `fk_tbl_object_tbl_locality1_idx` (`tbl_locality_id`),
-  ADD KEY `fk_tbl_object_tbl_brigada1_idx` (`tbl_brigada_id`),
-  ADD KEY `fk_tbl_object_tbl_name_object1_idx` (`tbl_name_object_id`);
-
---
--- Индексы таблицы `tbl_type_locality`
---
-ALTER TABLE `tbl_type_locality`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tbl_type_object`
---
-ALTER TABLE `tbl_type_object`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `tdl_measuring_instrument`
---
-ALTER TABLE `tdl_measuring_instrument`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT для сохранённых таблиц
---
-
---
--- AUTO_INCREMENT для таблицы `certificate`
---
-ALTER TABLE `certificate`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT для таблицы `tbl_brigada`
---
-ALTER TABLE `tbl_brigada`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
---
--- AUTO_INCREMENT для таблицы `tbl_facility`
---
-ALTER TABLE `tbl_facility`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT для таблицы `tbl_hazard_category`
---
-ALTER TABLE `tbl_hazard_category`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT для таблицы `tbl_locality`
---
-ALTER TABLE `tbl_locality`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT для таблицы `tbl_name_object`
---
-ALTER TABLE `tbl_name_object`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT для таблицы `tbl_object`
---
-ALTER TABLE `tbl_object`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
--- AUTO_INCREMENT для таблицы `tbl_type_locality`
---
-ALTER TABLE `tbl_type_locality`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT для таблицы `tbl_type_object`
---
-ALTER TABLE `tbl_type_object`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT для таблицы `tdl_measuring_instrument`
---
-ALTER TABLE `tdl_measuring_instrument`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- Ограничения внешнего ключа сохраненных таблиц
---
-
---
--- Ограничения внешнего ключа таблицы `tbl_facility`
---
-ALTER TABLE `tbl_facility`
-  ADD CONSTRAINT `fk_tbl_facility_tbl_hazard_category` FOREIGN KEY (`hazard_category_id`) REFERENCES `tbl_hazard_category` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Ограничения внешнего ключа таблицы `tbl_locality`
---
-ALTER TABLE `tbl_locality`
-  ADD CONSTRAINT `fk_tbl_locality_tbl_type_locality` FOREIGN KEY (`type_locality_id`) REFERENCES `tbl_type_locality` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Ограничения внешнего ключа таблицы `tbl_object`
---
-ALTER TABLE `tbl_object`
-  ADD CONSTRAINT `fk_tbl_object_tbl_brigada1` FOREIGN KEY (`tbl_brigada_id`) REFERENCES `tbl_brigada` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_object_tbl_facility1` FOREIGN KEY (`facility_id`) REFERENCES `tbl_facility` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_object_tbl_locality1` FOREIGN KEY (`tbl_locality_id`) REFERENCES `tbl_locality` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_object_tbl_name_object1` FOREIGN KEY (`tbl_name_object_id`) REFERENCES `tbl_name_object` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_tbl_object_tbl_type_object1` FOREIGN KEY (`type_object_id`) REFERENCES `tbl_type_object` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- MySQL Script generated by MySQL Workbench
+-- 12/22/15 11:19:47
+-- Model: New Model    Version: 1.0
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+
+-- -----------------------------------------------------
+-- Schema vetl
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema vetl
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `vetl` DEFAULT CHARACTER SET utf8 ;
+USE `vetl` ;
+
+-- -----------------------------------------------------
+-- Table `vetl`.`typelocality`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`typelocality` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type_locality` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`locality`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`locality` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `locality` VARCHAR(45) NOT NULL,
+  `type_locality_id` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_tbl_locality_tbl_type_locality_idx` (`type_locality_id` ASC),
+  CONSTRAINT `fk_locality_typelocality`
+    FOREIGN KEY (`type_locality_id`)
+    REFERENCES `vetl`.`typelocality` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`hazardcategory`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`hazardcategory` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `hazard_category` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`facility`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`facility` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `facility` VARCHAR(45) NOT NULL,
+  `hazard_category_id` INT UNSIGNED NOT NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_tbl_facility_tbl_hazard_category_idx` (`hazard_category_id` ASC),
+  CONSTRAINT `fk_facility_hazardcategory`
+    FOREIGN KEY (`hazard_category_id`)
+    REFERENCES `vetl`.`hazardcategory` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`brigada`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`brigada` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `room_brigade` VARCHAR(45) NOT NULL,
+  `last_name_SHNS` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`measuringinstrument`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`measuringinstrument` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type_measuring_instrument` VARCHAR(45) NOT NULL,
+  `serial_number` VARCHAR(45) NULL,
+  `inventory_number` VARCHAR(45) NULL,
+  `calibration_date` DATE NOT NULL,
+  `number_certificate` VARCHAR(45) NOT NULL,
+  `calibration_interval` VARCHAR(45) NOT NULL,
+  `next_calibration` DATE NOT NULL,
+  `notices` VARCHAR(1024) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`typeobject`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`typeobject` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type_object` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`nameobject`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`nameobject` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name_object` VARCHAR(254) NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`object`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`object` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type_object_id` INT UNSIGNED NOT NULL,
+  `tbl_name_object_id` INT UNSIGNED NOT NULL,
+  `tbl_brigada_id` INT UNSIGNED NOT NULL,
+  `inventory_number` VARCHAR(45) NULL,
+  `tbl_locality_id` INT UNSIGNED NOT NULL,
+  `facility_id` INT UNSIGNED NOT NULL,
+  `inspection_date` DATE NOT NULL,
+  `inspection_interval` VARCHAR(45) NOT NULL,
+  `next_inspection` DATE NOT NULL,
+  `protocol_number` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`),
+  INDEX `fk_tbl_object_tbl_type_object1_idx` (`type_object_id` ASC),
+  INDEX `fk_tbl_object_tbl_facility1_idx` (`facility_id` ASC),
+  INDEX `fk_tbl_object_tbl_locality1_idx` (`tbl_locality_id` ASC),
+  INDEX `fk_tbl_object_tbl_brigada1_idx` (`tbl_brigada_id` ASC),
+  INDEX `fk_tbl_object_tbl_name_object1_idx` (`tbl_name_object_id` ASC),
+  CONSTRAINT `fk_object_type_object`
+    FOREIGN KEY (`type_object_id`)
+    REFERENCES `vetl`.`typeobject` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_object_facility`
+    FOREIGN KEY (`facility_id`)
+    REFERENCES `vetl`.`facility` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_object_locality`
+    FOREIGN KEY (`tbl_locality_id`)
+    REFERENCES `vetl`.`locality` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_object_brigada`
+    FOREIGN KEY (`tbl_brigada_id`)
+    REFERENCES `vetl`.`brigada` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_object_nameobject`
+    FOREIGN KEY (`tbl_name_object_id`)
+    REFERENCES `vetl`.`nameobject` (`id`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `vetl`.`certificate`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `vetl`.`certificate` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `issued` VARCHAR(254) NOT NULL,
+  `name_certificate` VARCHAR(254) NOT NULL,
+  `number_certificate` VARCHAR(45) NOT NULL,
+  `date_issue_certificate` DATE NOT NULL,
+  `valid_to_certificate` DATE NOT NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
