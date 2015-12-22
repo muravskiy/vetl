@@ -17,7 +17,7 @@ class CertificateController extends Controller
             'totalCount' => $query->count(),
         ]);
 
-        $countries = $query->orderBy('name_certificate') //сортировка
+        $countries = $query->orderBy('valid_to_certificate') //сортировка
             ->offset($pagination->offset)
             ->limit($pagination->limit)
             ->all();
