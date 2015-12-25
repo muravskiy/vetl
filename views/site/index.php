@@ -55,3 +55,12 @@ $this->title = 'VETL';
 <!--
 <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
 -->
+
+
+
+
+<?php 
+
+echo $badlist;
+
+?>

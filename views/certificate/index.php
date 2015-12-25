@@ -8,6 +8,7 @@ use yii\widgets\LinkPager;
     <li>
             <?= Html::encode("") ?>
        		Назва - <b> <?= $certificate->name_certificate?> </b> <br>
+       		
        		Виданий - <?= $certificate->issued?> <br>						
 		Номер : <?= $certificate->number_certificate?> <br>
 		Дата видачи : <?= $certificate->date_issue_certificate?> <br>
@@ -25,5 +26,5 @@ use yii\widgets\LinkPager;
     </li>
 <?php endforeach; ?>
 </ul>
-
+<?=$eeeee->id?>
 <?= LinkPager::widget(['pagination' => $pagination]) ?>
