@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Overtime;
+use app\models\Certificate;
 
 class SiteController extends Controller
 {
@@ -55,8 +56,15 @@ class SiteController extends Controller
     	$model=new Overtime();
     	
     	
+    	$customer = Certificate::findOne(2);
+    	//var_dump($customer);
+    	    	
     	
-    	return $this->render('index', ['badlist' => $model->badlist()]);
+    	return $this->render('index', [
+    				'badlist' => $model->badlist(),
+    				'eeeee' => $customer,
+    		
+    									]);
     }
 
     public function actionLogin()

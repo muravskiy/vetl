@@ -20,8 +20,17 @@ $this->title = 'VETL';
         <div class="row">
             <div class="col-lg-4">
                 <h2>TEMP</h2>
-
-                <p></p>
+				
+                <p>
+                
+                
+                
+                
+                
+                
+                <span style="color: #ff6600;"><?php echo $badlist;?><br></span>
+                
+                </p>
 
                 
             </div>
@@ -61,6 +70,8 @@ $this->title = 'VETL';
 
 <?php 
 
-echo $badlist;
+//echo $badlist;
+//echo $eeeee->date_issue_certificate;
 
 ?>
+
