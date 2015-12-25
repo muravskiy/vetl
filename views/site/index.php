@@ -30,7 +30,7 @@ $this->title = 'VETL';
  
                 <p>
                        
-               <li><span style="color: #ff6600;"> Дата - nameobject(name_object) Бригада №brigada(room_brigade) ШНС brigada(last_name_SHNS) <br></span></li>
+               <li><span style="color: #ff6600;"> Дата - nameobject.name_object Бригада № brigada.room_brigade ШНС brigada.last_name_SHNS <br></span></li>
                <li><span style="color: #ff6600;"> Дата - Бокорізи Бригада № 4 ШНС Покотило <br></span></li>
                   
                 </p>
