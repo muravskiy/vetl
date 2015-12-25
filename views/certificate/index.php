@@ -8,11 +8,10 @@ use yii\widgets\LinkPager;
     <li>
             <?= Html::encode("") ?>
        		Назва - <b> <?= $certificate->name_certificate?> </b> <br>
-       		
        		Виданий - <?= $certificate->issued?> <br>						
-		Номер : <?= $certificate->number_certificate?> <br>
-		Дата видачи : <?= $certificate->date_issue_certificate?> <br>
-		Дійсний до : <b> <?= $certificate->valid_to_certificate; ?></b>
+			Номер : <?= $certificate->number_certificate?> <br>
+			Дата видачи : <?= $certificate->date_issue_certificate?> <br>
+			Дійсний до : <b> <?= $certificate->valid_to_certificate; ?></b>
                         	<b>
 				<?php	$dt = date('Y-m-d'); ?>
 				<?php if($dt >= $certificate->valid_to_certificate): ?>
@@ -26,5 +25,4 @@ use yii\widgets\LinkPager;
     </li>
 <?php endforeach; ?>
 </ul>
-<?=$eeeee->id?>
 <?= LinkPager::widget(['pagination' => $pagination]) ?>

@@ -11,10 +11,8 @@ class CertificateController extends Controller
     public function actionIndex()
     {
         $query = Certificate::find();
+            
         
-        
-        $customer = Certificate::findOne(2);
-//var_dump($customer);
         $pagination = new Pagination([
             'defaultPageSize' => 5,
             'totalCount' => $query->count(),
@@ -28,7 +26,6 @@ class CertificateController extends Controller
         return $this->render('index', [
             'certificat' => $certificat,
             'pagination' => $pagination,
-        	'eeeee' => $customer,
-        ]);
+        	]);
     }
 }
