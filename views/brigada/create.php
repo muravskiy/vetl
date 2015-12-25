@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Brigada */
 
-$this->title = 'Create Brigada';
+$this->title = 'Створити бригаду';
 $this->params['breadcrumbs'][] = ['label' => 'Brigadas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

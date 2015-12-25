@@ -41,8 +41,8 @@ class Brigada extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'room_brigade' => 'Room Brigade',
-            'last_name_SHNS' => 'Last Name  Shns',
+            'room_brigade' => 'Номер бригади',
+            'last_name_SHNS' => 'Прізвище старшого електромеханіка',
         ];
     }
 
