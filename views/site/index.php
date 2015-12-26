@@ -4,6 +4,33 @@
 
 $this->title = 'VETL';
 ?>
+<!-- таблица с циклами накорые выводять просрочку и не только -->
+<table border=1>
+	<tr>
+		<th>Колонка просроченых состояний</th>
+		<th>Колонка скоро просроченых инструментов</th>
+	</tr>
+	<tr>
+		<td>
+			<pre>
+			<?php
+				foreach ($instrumentstatus['bad'] as $value ){
+					print_r($value);
+				}
+			?>
+			</pre>
+		</td>
+		<td>
+			<pre>
+			<?php
+				foreach ($instrumentstatus['good'] as $value ){
+					print_r($value);
+				}
+			?>
+			</pre>
+		</td>
+	</tr>
+</table>
 <!-- 
 <div class="site-index">
 

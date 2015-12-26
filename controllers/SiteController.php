@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Stampdate;
 
 class SiteController extends Controller
 {
@@ -49,7 +50,12 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index');
+    	// подключили модуль
+    	$model = new Stampdate();
+        return $this->render('index',[
+        		//передали масив, результат работы метода dateControl() класса Stampdate()  
+        		'instrumentstatus' => $model->dateControl(),	
+        ]);
     }
 
     public function actionLogin()
