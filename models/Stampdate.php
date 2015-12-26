@@ -43,9 +43,17 @@ class Stampdate extends ActiveRecord
 			// записать инструмент в масив просрочки
 			// иначе записать инструмент в масив не просроченых 
 			if($unixTimeActual > $datePorog) {
+				
+				// конвертируем unix_time в человеко читаемый формат
+				$value['int_date'] = $this->unixtime_convert($datePorog);
+				
 				//echo 'караул просроченый инструмент';
 				$badInstruments[$i++] = $value;
 			} else {
+				
+				// конвертируем unix_time в человеко читаемый формат
+				$value['int_date'] = $this->unixtime_convert($datePorog);
+				
 				//echo '<br>все гуд';
 				$goodInstruments[$i++] = $value;
 			}
@@ -54,19 +62,19 @@ class Stampdate extends ActiveRecord
 		// Создаем масив для вывода из функции
 		$instrument['bad'] = $badInstruments;
 		$instrument['good'] = $goodInstruments;
-		
+		//$this->unixtime_convert( 
+		//		$instrumentstatus['good']['int_date']);
 		return $instrument;
 	}
 	
 	public function unixtime_convert($unix_time=null,$tz='Europe/Kiev'){
-
-		$dt = new DateTime();
-		$tz = new DateTimeZone($tz);
+		
+		$dt = new \DateTime();
+		$tz = new \DateTimeZone($tz);
 		//var_dump($dt);
 		//var_dump($tz);
 		$dt->setTimestamp($unix_time);
 		$dt->setTimezone($tz);
-		return $dt->format("r");
-
+		return $dt->format('Y-m-d');
 	}
 }

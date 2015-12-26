@@ -54,7 +54,7 @@ class SiteController extends Controller
     	$model = new Stampdate();
         return $this->render('index',[
         		//передали масив, результат работы метода dateControl() класса Stampdate()  
-        		'instrumentstatus' => $model->dateControl(),	
+        		'instrumentstatus' => $model->dateControl(),
         ]);
     }
 
