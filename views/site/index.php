@@ -5,13 +5,13 @@
 $this->title = 'VETL';
 ?>
 <!-- таблица с циклами накорые выводять просрочку и не только -->
-<table border=1>
+<table border=2>
 	<tr>
-		<th>Колонка просроченых состояний</th>
-		<th>Колонка скоро просроченых инструментов</th>
+		<th style="padding: 20px;">Колонка просроченых состояний</th>
+		<th style="padding: 20px;">Колонка скоро просроченых инструментов</th>
 	</tr>
 	<tr>
-		<td>
+		<td style="padding: 8px;">
 			<pre>
 			<?php
 				foreach ($instrumentstatus['bad'] as $value ){
@@ -20,7 +20,7 @@ $this->title = 'VETL';
 			?>
 			</pre>
 		</td>
-		<td>
+		<td style="padding: 8px;">
 			<pre>
 			<?php
 				foreach ($instrumentstatus['good'] as $value ){
