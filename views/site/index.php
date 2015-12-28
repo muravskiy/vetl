@@ -1,4 +1,10 @@
 <?php
+use yii\helpers\Html;
+use yii\widgets\LinkPager;
+?>
+
+
+<?php
 
 /* @var $this yii\web\View */
 
@@ -19,23 +25,40 @@ $this->title = 'VETL';
 
         <div class="row">
             <div class="col-lg-4">
-                <h2>Закінчився термін дії</h2>
+                <h3>Закінчився термін дії</h3>
 				
                 <p>
                 
+    <?php foreach ($badlist as $badlistpr): ?>
+      	
+      	
+      	
+      	
+      	<li>
+            <?= Html::encode("") ?>
+              
+       		<?php var_dump($badlistpr);?>
+       		<?php exit("остановка");?>
+       		
+       		<?= $badlistpr->id?><br>
+       		<?= $badlistpr->issued?> <br>						
+			<?= $badlistpr->number_certificate?> <br>
+			<?= $badlistpr->date_issue_certificate?> <br>
+			<?= $badlistpr->valid_to_certificate; ?>br>
+        								
+		
+    	</li>
+	<?php endforeach; ?>
                 
+                	
                 
-                
-                
-                
-                <span style="color: #ff6600;"><?php echo $badlist;?><br></span>
                 
                 </p>
 
                 
             </div>
             <div class="col-lg-4">
-                <h2>Виконання випробувань сьогодні</h2>
+                <h3>Виконання випробувань сьогодні</h3>
  
                 <p>
                        
@@ -47,7 +70,7 @@ $this->title = 'VETL';
                 
             </div>
             <div class="col-lg-4">
-                <h2>Виконання випробувань протягом тижня</h2>
+                <h3>Виконання випробувань протягом тижня</h3>
 
                 <p>
                     
