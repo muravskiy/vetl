@@ -6,16 +6,44 @@ use yii\db\ActiveRecord;
 
 class Overtime extends ActiveRecord
 {
-	
-	public $customer1;
-	public $result = array();
+		
 	function badlist() {
 		
-		$customer1 = Certificate::findOne(2);
-		//var_dump($customer);
-		$result = $customer1->valid_to_certificate;
+		$customer = Certificate::findOne(2);
+		
+		$dt = date('Y-m-d');
+		
+		foreach ($customer as $customer1){
+			
+			if($dt >= $customer->valid_to_certificate)
+				$customer1 = $customer;
+			
+		}
 		
 		
+		//else $customer1 = 1;
+	
+		
+		$result = $customer1;
+	
+			
+	/*		$query = Certificate::findOne(2);
+			$posts = $query->asArray()->all();
+			
+			$dt = date('Y-m-d');
+			
+			foreach ($posts as $posts1){
+					
+				if($dt >= $posts->valid_to_certificate)
+					$posts1 = $posts;
+						
+			}
+			
+			$result = $posts1;
+		*/
+				
+				
+				
 		return $result;
 		
 	}
