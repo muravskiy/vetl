@@ -9,41 +9,30 @@ class Overtime extends ActiveRecord
 		
 	function badlist() {
 		
-		$customer = Certificate::findOne(2);
+		$query = Certificate::find();
+		$customer = $query->asArray()->all();
 		
 		$dt = date('Y-m-d');
 		
 		foreach ($customer as $customer1){
 			
-			if($dt >= $customer->valid_to_certificate)
-				$customer1 = $customer;
+			if($customer1 [valid_to_certificate] <= $dt){
+				$rgResult[] = $customer1;
+				
+			}
+				
 			
 		}
+		
+		
+		
 		
 		
 		//else $customer1 = 1;
 	
 		
-		$result = $customer1;
-	
+		$result = $rgResult;
 			
-	/*		$query = Certificate::findOne(2);
-			$posts = $query->asArray()->all();
-			
-			$dt = date('Y-m-d');
-			
-			foreach ($posts as $posts1){
-					
-				if($dt >= $posts->valid_to_certificate)
-					$posts1 = $posts;
-						
-			}
-			
-			$result = $posts1;
-		*/
-				
-				
-				
 		return $result;
 		
 	}

@@ -28,7 +28,7 @@ $this->title = 'VETL';
                 <h3>Закінчився термін дії</h3>
 				
                 <p>
-                
+     <ul>           
     <?php foreach ($badlist as $badlistpr): ?>
       	
       	
@@ -37,19 +37,15 @@ $this->title = 'VETL';
       	<li>
             <?= Html::encode("") ?>
               
-       		<?php var_dump($badlistpr);?>
-       		<?php exit("остановка");?>
-       		
-       		<?= $badlistpr->id?><br>
-       		<?= $badlistpr->issued?> <br>						
-			<?= $badlistpr->number_certificate?> <br>
-			<?= $badlistpr->date_issue_certificate?> <br>
-			<?= $badlistpr->valid_to_certificate; ?>br>
-        								
+       		<?= $badlistpr [valid_to_certificate]?> 						
+			<?= $badlistpr [name_certificate]?> 
+			<?= $badlistpr [number_certificate]?> 
+			<br>
+        	<?php //var_dump($badlistpr);?>							
 		
     	</li>
 	<?php endforeach; ?>
-                
+     </ul>           
                 	
                 
                 
