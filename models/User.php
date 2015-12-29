@@ -100,4 +100,15 @@ class User extends \yii\base\Object implements \yii\web\IdentityInterface
     {
         return $this->password === $password;
     }
+    
+    public function beforeSave($insert)
+    {
+    	if (parent::beforeSave($insert)) {
+    		if ($this->isNewRecord) {
+    			$this->auth_key = \Yii::$app->security->generateRandomString();
+    		}
+    		return true;
+    	}
+    	return false;
+    }
 }

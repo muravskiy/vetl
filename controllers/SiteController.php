@@ -2,13 +2,13 @@
 
 namespace app\controllers;
 
+use app\models\ContactForm;
+use app\models\LoginForm;
+use app\models\Stampdate;
 use Yii;
 use yii\filters\AccessControl;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\LoginForm;
-use app\models\ContactForm;
-use app\models\Stampdate;
+use yii\web\Controller;
 
 class SiteController extends Controller
 {
@@ -50,12 +50,35 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-    	// подключили модуль
-    	$model = new Stampdate();
-        return $this->render('index',[
-        		//передали масив, результат работы метода dateControl() класса Stampdate()  
-        		'instrumentstatus' => $model->dateControl(),
-        ]);
+    	
+    	// the ID of the current user. 
+    	//Null if the user not authenticated.
+    	$id = (int)\Yii::$app->user->id;
+    	
+    	// проверяем если существует $id и содержин INT число
+    	// то юзер аутертифицыровался иначе $id содержит Null
+    	// по хорошему здесь мы должны 
+    	// проводить сравнение $id c 'id' пользователя,
+    	// из масива $users модели models/User, или из БД для секюрности
+    	if( $id )
+    	{
+    		// подключили модуль вывода просрочки
+    		$model = new Stampdate();
+    		return $this->render('index_allow',[
+    				//передали масив, результат работы метода dateControl() класса Stampdate()
+    				'instrumentstatus' => $model->dateControl(),
+    		]);
+    	}
+    	
+    	// Вернет имя пользователя
+    	//$identity = $identity->username;    	   
+
+    	// the current user identity. Null if the user is not authenticated.
+    	// $identity = \Yii::$app->user->identity;
+    	    	   
+    	
+    	
+        return $this->render('index');
     }
 
     public function actionLogin()
