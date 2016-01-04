@@ -82,3 +82,12 @@ name_certificate - НазваДозвілСвідотство
 number_certificate - НомерДозвілСвідотство
 date_issue_certificate - ДозвілСвідотство
 valid_to_certificate - ДійснийДоДозвілСвідотство
+
+
+Regulations - Нормативний документ
+
+
+Periodicity - Періодичність перевірки
+
+
+
