@@ -23,6 +23,11 @@ class CertificateController extends Controller
             ->limit($pagination->limit)
             ->all();
 	
+         $dataProvider = new ActiveDataProvider([
+     		'query' => $query,
+     		'sort'=> ['defaultOrder' => ['topic_order'=>SORT_ASC]]
+ 		]);
+            
         return $this->render('index', [
             'certificat' => $certificat,
             'pagination' => $pagination,
@@ -45,13 +50,15 @@ class CertificateController extends Controller
     	$request = \Yii::$app->request;
     	//echo '<br><br><br><br><br>';
     	$arr = $request->get();
+    	//var_dump($arr);exit;
     	$idCert = $arr['1']['id'];
     	//$request->post()
     	
     	$model = new Certificate();
+
     	// выбрать сертификат по id
-    	$getFailCert = $model->getFailCertificate( $idCert );
-    	
+    	$getFailCert = $model->getFailCertificats();
+    	//var_dump($expression);
     	return $this->render('edit', [
     			'getFailCert' => $getFailCert,
     	]);

@@ -3,6 +3,8 @@
 /* @var $this yii\web\View */
 
 $this->title = 'VETL';
+//$this->registerJsFile('@web/js/main-index.js',['position' => $this::POS_HEAD],'main-index');
+//$this->registerJs("alert('alert')",$this::POS_READY, 'hello');
 ?>
 <!-- 
 <div class="site-index">

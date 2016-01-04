@@ -1,16 +1,17 @@
 <?php
 use yii\helpers\Html;
-use yii\widgets\LinkPager;
 ?>
-<h1>Меню обновления сертификита</h1><br>
-
-<h4>Просроченый сертификат</h4>
+<h1>Меню обновления просроченых сертификатов</h1><br>
+<h4>Список просроченых сертификатов</h4>
 <pre>
 <?php  
-echo $getFailCert[0][issued].'<br>';
-echo $getFailCert[0][name_certificate].'<br>';
-echo $getFailCert[0][number_certificate].'<br>';
-echo $getFailCert[0][valid_to_certificate].'<br>';
+foreach ( $getFailCert as $value){
+	print '<div style="border: 1px solid gray;padding:5px;"><b>Кем выдан:</b> '.$value['issued'].'<br>';
+	print '<b>Название сертификата:</b> '.$value['name_certificate'].'<br>';
+	print '<b>Номер сертификата:</b> '.$value['number_certificate'].'<br>';
+	print '<b>Дата видачи:</b> '.$value['date_issue_certificate'].'<br>';
+	print '<b>Сертификат действовал до:</b> '.$value['valid_to_certificate'].'</div><br>';
+}
 ?>
 </pre>
 
@@ -19,7 +20,7 @@ echo $getFailCert[0][valid_to_certificate].'<br>';
 				['class' => 'btn btn-default']
 		); ?>
 		
-<?= Html::a('Выбрать сертификат', 
+<?= Html::a('Выбрать сертификат для обновления', 
 				['certificate/setcert'], 
 				['class' => 'btn btn-default']
 		); ?>

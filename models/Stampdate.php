@@ -11,7 +11,7 @@ class Stampdate extends ActiveRecord
 		
 		$goodInstrument = array();
 		$badInstruments = array();
-		$instrument 	= array();
+		$instruments 	= array();
 		$st				= array();
 		$st_tmp			= array();
 		$i = '0';
@@ -60,11 +60,12 @@ class Stampdate extends ActiveRecord
 			
 		}
 		// Создаем масив для вывода из функции
-		$instrument['bad'] = $badInstruments;
-		$instrument['good'] = $goodInstruments;
+		$instruments['bad'] = $badInstruments;
+		$instruments['good'] = $goodInstruments;
+		
 		//$this->unixtime_convert( 
 		//		$instrumentstatus['good']['int_date']);
-		return $instrument;
+		return $instruments;
 	}
 	
 	public function unixtime_convert($unix_time=null,$tz='Europe/Kiev'){

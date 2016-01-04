@@ -14,18 +14,26 @@ $this->title = 'VETL';
 		<td style="padding: 8px;">
 			<pre>
 			<?php
-			
-				foreach ($instrumentstatus['bad'] as $value ){
-					print_r($value);
+				if($instrumentStatus['bad']){
+					foreach ($instrumentStatus['bad'] as $value ){
+						print_r($value);
+					}	
+				} else {
+					echo "Присрочки нет";
 				}
+				
 			?>
 			</pre>
 		</td>
 		<td style="padding: 8px;">
 			<pre>
 			<?php
-				foreach ($instrumentstatus['good'] as $value ){
-					print_r($value);
+				if($instrumentStatus['good']){
+					foreach ($instrumentStatus['good'] as $value ){
+						print_r($value);
+					} 
+				} else {
+					echo "<h5 style=''>Странно но валидных инструментов нет!</h5>Скорее всего что-то пошло не так.";
 				}
 			?>
 			</pre>

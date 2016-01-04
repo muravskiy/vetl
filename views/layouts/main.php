@@ -3,6 +3,11 @@
 /* @var $this \yii\web\View */
 /* @var $content string */
 
+/**
+ * @var $content string
+ * @var $this /yii/web/View
+ */
+
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
