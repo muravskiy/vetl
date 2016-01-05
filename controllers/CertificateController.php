@@ -6,6 +6,7 @@ use yii\helpers\Html;
 use yii\web\Controller;
 use yii\web\UploadedFile;
 use yii\data\Pagination;
+use yii\data\ActiveDataProvider;
 use app\models\Certificate;
 use app\models\CertificateForm;
 
