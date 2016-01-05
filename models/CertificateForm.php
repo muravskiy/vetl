@@ -38,4 +38,6 @@ class CertificateForm extends Model
 		);
 	}
 	
+	// Приверка безопасности атрибутов формы
+	//public function isAttributeSafe(){}
 }

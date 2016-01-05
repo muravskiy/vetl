@@ -6,11 +6,15 @@ use yii\helpers\Html;
 <pre>
 <?php  
 foreach ( $getFailCert as $value){
-	print '<div style="border: 1px solid gray;padding:5px;"><b>Кем выдан:</b> '.$value['issued'].'<br>';
-	print '<b>Название сертификата:</b> '.$value['name_certificate'].'<br>';
-	print '<b>Номер сертификата:</b> '.$value['number_certificate'].'<br>';
-	print '<b>Дата видачи:</b> '.$value['date_issue_certificate'].'<br>';
-	print '<b>Сертификат действовал до:</b> '.$value['valid_to_certificate'].'</div><br>';
+echo <<<END
+<div style="border: 1px solid gray;padding:5px;margin-top:-50px;">
+	<b>Кем выдан:</b> {$value['issued']}
+	<b>Название сертификата:</b> {$value['name_certificate']}
+	<b>Номер сертификата:</b> {$value['number_certificate']}
+	<b>Дата видачи:</b> {$value['date_issue_certificate']}
+	<b>Сертификат действовал до:</b> {$value['valid_to_certificate']}
+</div><br>
+END;
 }
 ?>
 </pre>
