@@ -2,10 +2,13 @@
 
 namespace app\controllers;
 
+use yii\helpers\Html;
 use yii\web\Controller;
+use yii\web\UploadedFile;
 use yii\data\Pagination;
 use app\models\Certificate;
 use app\models\CertificateForm;
+
 
 class CertificateController extends Controller
 {
@@ -48,17 +51,14 @@ class CertificateController extends Controller
     public function actionEdit(){
     	 
     	$request = \Yii::$app->request;
-    	//echo '<br><br><br><br><br>';
     	$arr = $request->get();
-    	//var_dump($arr);exit;
     	$idCert = $arr['1']['id'];
-    	//$request->post()
     	
     	$model = new Certificate();
 
     	// выбрать сертификат по id
     	$getFailCert = $model->getFailCertificats();
-    	//var_dump($expression);
+
     	return $this->render('edit', [
     			'getFailCert' => $getFailCert,
     	]);
@@ -66,20 +66,63 @@ class CertificateController extends Controller
     
     public function actionNew()
     {
-    	$model = new CertificateForm();
-    	//$setNewCert = $model->setNewCertificate();
-    	/*
-    	if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+    	//подключаем наш модуль
+    	$form = new CertificateForm();
+    	
+    	// проверяем пришли ли нам данные из формы в $_POST переменной средствами yii
+    	//  Проверяем валидность данных
+    	if ( $form->load( \Yii::$app->request->post() ) && $form->validate() ) {
             // данные в $model удачно проверены
-			echo 'this work POST';
             // делаем что-то полезное с $model ...
+            
+			// обьявил масив для передачи в нем всех переменных, из формы, в одном месте
+    		$valForm = array();
+    		// присвоить даные из полей формы переменным
+    		$issued = Html::encode($form->issued);
+            $name_certificate = Html::encode($form->name_certificate);
+			$number_certificate = Html::encode($form->number_certificate);
+			$date_issue_certificate = Html::encode($form->date_issue_certificate);
+			$valid_to_certificate = Html::encode($form->valid_to_certificate);
 
-            return $this->render('entry-confirm', ['model' => $model]);
-        } else {
-        	echo 'this NOT work POST';
+			// Получить инстенс(фаил) в переменную $form->file из поля формы file
+			$form->file = UploadedFile::getInstance($form, 'file');
+			$form->file->saveAs('img'.DIRECTORY_SEPARATOR.$form->file->baseName.'.'.$form->file->extension);
+			
+			// собираю переменные в масив
+			$valForm = [
+						'issued' => $issued,
+						'name_certificate' => $name_certificate,
+						'number_certificate' => $number_certificate,
+						'date_issue_certificate' => $date_issue_certificate,
+						'date_issue_certificate' => $date_issue_certificate,
+						//'name' => Html::encode($form->tt),
+					];
+			
+			//var_dump($valForm);exit;
+			
+			//$setNewCert = $model->setNewCertificate();
+			
+			// визываем вид и мередаем данные
+			return $this->render('new',
+						[
+							'form' => $form,
+							'valForm' 	=> $valForm,	
+						]
+					);
+        } 
+        else // если данные не пришли или не прошли проверку валидности 
+        {
+        	$issued = '';
+			$name_certificate = '';
+			$number_certificate = '';
+			$date_issue_certificate = '';
+			$valid_to_certificate = '';
             // либо страница отображается первый раз, либо есть ошибка в данных
-            return $this->render('entry', ['model' => $model]);
-        }*/
-    	return $this->render('new');
+            // вызываем вид и передаем данные из модели
+            return $this->render('new',
+    				['form' => $form]
+    			);
+        }
+
     }
 }
