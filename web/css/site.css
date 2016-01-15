@@ -1,6 +1,10 @@
 html,
 body {
     height: 100%;
+    /* Назначил шрифт 'Yeseva One', для html тега body 
+       Тоесть для всего сайта
+    */
+    font-family: 'Yeseva One', cursive;
 }
 
 .wrap {

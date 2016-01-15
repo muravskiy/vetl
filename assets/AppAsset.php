@@ -19,6 +19,9 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+    	// добавил гугловый шрифт, также он указал в site.css
+    	// шрифты от гугла можно найти тут https://www.google.com/fonts/?subset=cyrillic
+    	'//fonts.googleapis.com/css?family=Yeseva+One&subset=latin,cyrillic',
     ];
     public $js = [
     	'js/main.js',
